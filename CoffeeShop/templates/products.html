@@ -1,0 +1,477 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}☕Products☕{% endblock title %}
+{% block head %}
+<script src="https://kit.fontawesome.com/d9b0c0cca9.js" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	 
+<!-- <link rel="stylesheet" href="{% static 'css/products.css' %}"> -->
+
+
+
+<style>
+   .heading{
+      color: whitesmoke;
+      text-align: center;
+  }
+  .img1{
+      height: 280px;
+      width: 100%;
+      margin-left: 2%;
+      border-radius: 3%;
+      margin-top: 5%;
+      cursor:pointer;
+      
+      
+  }
+  .card-title{
+      margin-top: 0.5%;
+      margin-left: 6.5%;
+      background: none;
+      color: whitesmoke;
+      
+  }
+  .card-text{
+      color: whitesmoke;
+      margin-left: 2.4%;
+      font-style: italic;
+  }
+  .tags{
+      margin-left: 6.5%;
+      color:whitesmoke;
+      font-style:initial;
+      font-size: large;
+  }
+  .btn{
+      margin-left: 6%;
+  }
+  .g{
+      text-align: center;
+  }
+  .img{
+      width: 15%;
+      float: left;
+      margin-left: 60px;
+      text-align: center;
+      min-width: 200px;
+      margin-bottom: 50px;
+  }
+  
+  .btn-success{
+     background-color: #c0aa83;
+     border-color: #c0aa83;
+     color: #fff;
+  }
+  
+  .btn-success:hover{
+     background-color: #242424;
+     border-color: #242424;
+     color: #fff;
+  } 
+  a.social-icon{
+     color:#242424;
+  }
+  
+  a.social-icon:hover{
+     color:#c0aa83;
+  }
+  
+  .img2{
+      cursor: pointer;
+      height: 280px;
+      width: 100%;
+      margin-left: 2%;
+      border-radius: 3%;
+      margin-top: 5%;
+  
+  }
+  
+  
+  .a{
+      height:150px;
+      width:100%;
+      margin-top: 73%;
+      background-color:#c0aa83;
+      max-height: 500px;
+  } 
+  
+  .inp{
+      border:2px solid;
+      padding-top: -10%;
+      margin-left: 30%;
+      border-color:#c0aa83;
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      border-radius: 10px;
+  }
+  .inp:hover{
+      border-color: aqua;
+  }
+  
+  .but{
+      margin-top: 2%;
+      background-color:#242424;
+      color: #fff;
+      border-radius: 0.5rem;
+      margin-left: 2%;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+  }
+  .but:hover{
+      background-color:#fff;
+      color: black;
+      font-weight: bold;
+  
+  }
+  .txt{
+      padding-top: 1%;
+      margin-left: 6%;
+      float: left;    
+  }
+  
+  
+   .line{
+      padding-top: 3%;
+      float:left;
+  
+   }
+   .but1{
+      padding-top: 3%;
+      float:left;
+      margin-left: 8%;
+   }
+   .social-icon{
+      background-color: #ECE4C3;
+      width: 80px;
+      height: 80px;
+      padding:20px ;
+      margin: 10px;
+   }
+   
+   .social-icon a{
+      
+      background-color: #B98C45;
+      width: 50px;
+      height: 50px;
+      padding:10px 16px;
+      margin-right: 6px;
+      position: relative;
+      display: block;
+   
+   }
+   
+  
+   .icon{
+      margin-top: 3.5%;
+      margin-right:6%;
+   }
+   
+   .footer-title{
+      color: #fff;
+      font-family: 'Kanit',sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 46px;
+   }
+   
+    .copyright{
+      color:#c0aa83;
+      font-family: 'Kanit',sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+   }
+   
+
+   .subscribe-section{
+      background-image: url('../static/img/footermap.png');
+      background-color:#242424;
+   }
+
+   .contact-heading{
+      color: #c0aa83;
+      font-family: 'Kanit',sans-serif;
+      font-size: 30px;
+      font-weight: 300;
+   }
+   
+   .contact-info{
+      color: #fff;
+      font-family: 'Kanit',sans-serif;
+      font-size: 18px;
+   }
+   
+   a.explore-link{
+      color: #fff;
+      font-family: 'Kanit',sans-serif;
+      font-size: 15px;
+      text-decoration: none;
+   }
+   
+   a.explore-link:hover{
+      color: #c0aa83;
+      font-family: 'Kanit',sans-serif;
+      font-size: 15px;
+      text-decoration: none;
+   }
+   
+   .logo-text-white{
+      color: #fff;
+      font-family: 'Kanit',sans-serif;
+      font-size: 16px;
+   }
+   .page-section{
+      padding: 8rem 0;
+   }
+
+   .footer-info{
+      background-color: #000;
+   }
+
+.owners{
+   padding-top: 3%;
+   text-align: center;
+   color: #B98C45;
+}
+
+.adnan{
+   padding-top: 2%;
+   margin-left: 14%;
+   float: left;
+   font-style:oblique;
+   font-size:medium;
+   color:#c0aa83;
+}
+
+.aman{
+   padding-top: 2%;
+   margin-left: 10%;
+   float: left;
+   font-style: oblique;
+   font-size:medium;
+   color:#c0aa83;
+}
+.anjan{
+   padding-top: 2%;
+   margin-left: 10%;
+   float: left;
+   font-style: oblique;
+   font-size:medium;
+   color:#c0aa83;
+
+}
+.arbaaz{
+   padding-top: 2%;
+   margin-left: 10%;
+   float: left;
+   font-style: oblique;
+   font-size:medium;
+   color:#c0aa83;
+
+}
+   
+
+   
+</style>
+
+{% endblock head %}
+
+{% block body %}
+<!-- Welcome To ☕Products Page☕ -->
+<!-- Write your Code here -->
+<div class="bg">
+   <div class="heading">
+      <h1>Our Populars</h1>
+   </div>
+   <!-- first row images -->
+   <div class="img">
+      <img src="{% static 'img/latteart.jpg' %}" class="img1">
+      <h5 class="card-title"><b>Latte Art</b></h5>
+      <p class="card-text small">With supporting text below as a<br>natural lead-in to additional content.</p>
+      <p class="tags">Price ₹199</p>
+      <a href="#"  class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+
+   </div>
+   
+   <div class="img">
+      <img src="{% static 'img/mus.jpg' %}" class="img1">
+      <h5 class="card-title"><b>Mushroom Coffee</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹299</p>
+      <a href="#" aria-hidden="true" class="btn btn-success button-text"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/rage.jpg' %}" class="img1">
+      <h5 class="card-title"><b>Rage Coffee</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹349</p>
+      <a href="#"  class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/costa.jpg' %}" class="img1">
+      <h5 class="card-title"><b>Costa Coffee</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹180</p>
+      <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
+            aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/dark.jpg' %}" class="img1">
+      <h5 class="card-title"><b>Dark Coffee</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹499</p>
+      <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <!-- End First row images -->
+
+   <!-- second row image -->
+
+   <div class="img">
+      <img src="{% static 'img/continental.jpg' %}" class="img2">
+      <h5 class="card-title"><b>Continental Coffee</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹899</p>
+      <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/davidoff.jpg' %}" class="img2">
+      <h5 class="card-title"><b>David Off Coffee</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹600</p>
+      <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/country.png' %}" class="img2">
+      <h5 class="card-title"><b>Country Bean</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹200</p>
+      <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/Bevzilla.jpg' %}" class="img2">
+      <h5 class="card-title"><b>Bevzilla Decoction</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹650</p>
+      <a href="#"  class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+
+   </div>
+
+   <div class="img">
+      <img src="{% static 'img/meraki.jpeg' %}" class="img2">
+      <h5 class="card-title"><b>Meraki Decoction</b></h5>
+      <p class="card-text small">With supporting text below as a<br> natural lead-in to additional content.</p>
+      <p class="tags">Price ₹700</p>
+      <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a><p>&nbsp;</p>
+
+   </div>
+</div>
+
+<!-- End second row images -->
+
+<div class="a">
+   <div class="txt">
+      <h2 class="news" style="color:white;"><b>Subscribe</b></h2>
+      <h2 clas="newss" style="color:#242424;"><b>Weekly Newsletter</b></h2>
+   </div>
+
+   <div class="line">
+      <input type="text" placeholder="Enter your Email" name="email" class="inp">
+   </div>
+
+   <div class="but1">
+      <button type="submit" class="but">Subscribe</button>
+   </div>
+   <div class="icon" style="float:left; margin-left:7%; ">
+      <a href="#" class="social-icon"><i class="fa fa-facebook-f"></i></a>
+      <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+      <a href="#" class="social-icon"><i class="fa fa-google-plus"></i></a>
+      <a href="#" class="social-icon"><i class="fa fa-youtube"></i></a>
+   </div>
+
+</div>
+
+<section class="page-section subscribe-section">
+   <div class="container">
+      <div class="row">
+
+         <div class="col-lg-4">
+            <img src="{% static 'img/savannahwhite.png' %}">
+            <p class="logo-text-white">Need! A Hot cup of happiness with delicious taste then visit our new cafe Savannah located at ECAF Street Avenue, Sakchi, Jamshedpur. </p>
+         </div>
+
+         <div class="col-lg-4">
+            <h3 class="contact-heading">EXPLORE</h3>
+            <div class="row">
+               <div class="col-lg-6">
+                  <p><a class="explore-link" href="http://127.0.0.1:8000/"> > <b>Home</b></a></p>
+                  <p><a class="explore-link" href="http://127.0.0.1:8000/contact"> > <b>Contact Us</b></a></p>
+                  <p><a class="explore-link" href="http://127.0.0.1:8000/products"> > <b>Products</b></a></p>
+               </div>
+
+               <div class="col-lg-6">
+                  <p><a class="explore-link" href="#"> > <b>Blog</b></a></p>
+                  <p><a class="explore-link" href="http://127.0.0.1:8000/about"> > <b>About Us</b></a></p>
+                  <p><a class="explore-link" href="http://127.0.0.1:8000/menu"> > <b>Gallery</b></a></p>
+               </div>
+
+            </div>
+         </div>
+
+         <div class="col-lg-4">
+            <h3 class="contact-heading">CONTACT US</h3>
+            <p class="contact-info"><i class="fa fa-map-marker"></i>  EFAB Estate Avenue, Bistupur, Jamshedpur</p>
+            <p class="contact-info"><i class="fa fa-phone"></i> +91 8825110845 ,+91 7250198552 ,+91 9128554397,+91 6204430205</p>
+            <p class="contact-info"><i class="fa fa-envelope"></i>  info@coffeecartelcafe.com</p>
+            <p class="contact-info"><i class="fa fa-globe"></i> www.coffeecartelcafe.com</p>
+         </div>
+      </div>
+   </div>
+   <div class="owners">
+      <h3 class="ow">Owners</h3>
+   </div>
+   <div class="adnan">
+      Md Adnan Hussain Ansari
+   </div>
+   <div class="aman">
+      Aman Kumar Sharma
+   </div>
+   <div class="anjan">
+      Anjan Kumar
+
+   </div>
+   <div class="arbaaz">
+      Md Arbaaz Alam
+   </div>
+
+</section>
+
+<footer class="footer-info pt-5 py-4">
+   <div class="container">
+      <div class="small text-center text-muted">
+         <span class="footer-title">Coffee Cartel Cafe </span> <span class="copyright">&copy; All Right Reserved 2023</span>
+      </div>
+   </div>
+</footer>
+
+
+
+
+{% endblock body %}
